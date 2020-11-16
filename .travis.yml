@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t rajendratechila/angular-docker -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true rajendratechila/angular-docker npm run test
