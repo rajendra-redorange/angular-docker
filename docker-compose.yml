@@ -14,7 +14,8 @@ services:
   tests:
     build:
       context: .
-      dockerfile: Dockerfile.testsdev
+      dockerfile: Dockerfile.dev
     volumes:
       - /app/node_modules
       - .:/app
+    command: ["npm", "test"]
